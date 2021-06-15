@@ -23,7 +23,8 @@ creare un array di oggetti di studenti. Ciclare su tutti gli studenti e stampare
 nome e cognome.  Ricordatevi, è un array, quindi? for.
 */
 
-var ArrayStudenti = [{
+var ArrayStudenti = {
+    studenti:[{
     Name : 'Elon',   
     Surname: 'Musk',
     Age: 20
@@ -40,17 +41,8 @@ var ArrayStudenti = [{
     Age: 19
 }
 ]
-
-
-
-for(var x = 0; ArrayStudenti.length > x; x++){
-    console.log(k, ArrayStudenti[x])
-    delete ArrayStudenti[x].Age;
-for(var k in ArrayStudenti[x]){
-    console.log(k, ArrayStudenti[x][k])
-    output.innerHTML += k + ' ' + ArrayStudenti[x][k] + '<br>'
 }
-}
+
 
 
 /*
@@ -59,4 +51,22 @@ Dare la possibilità all’utente, attraverso 3 prompt() - uno per ciascuna prop
 UN SOLO oggetto studente inserendo nell’ordine: nome, cognome e età.
 */
 
+var userName = prompt("Inserisci il tuo nome");
+var userSurname = prompt("Inserisci il tuo cognome");
+var userAge = parseInt(prompt("Inserisci la tua età"));
 
+ArrayStudenti.studenti.push({
+    Name: userName,
+    Surname: userSurname,
+    Age: userAge
+})
+
+
+
+
+for(var x = 0; ArrayStudenti.studenti.length > x; x++){
+    for(var k in ArrayStudenti.studenti[x]){
+        console.log(k, ArrayStudenti.studenti[x][k])
+        output.innerHTML += k + ' ' + ArrayStudenti.studenti[x][k] + '<br>'
+    }
+    }
