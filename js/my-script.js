@@ -41,13 +41,15 @@ var ArrayStudenti = [{
 }
 ]
 
-for(var x = 0; ArrayStudenti.length > x; x++ ){
-    console.log(ArrayStudenti[x])
-}
 
+
+for(var x = 0; ArrayStudenti.length > x; x++){
+    console.log(k, ArrayStudenti[x])
+    delete ArrayStudenti[x].Age;
 for(var k in ArrayStudenti[x]){
     console.log(k, ArrayStudenti[x][k])
-    output2.innerHTML += k + ' ' + ArrayStudenti[x][k]
+    output.innerHTML += k + ' ' + ArrayStudenti[x][k] + '<br>'
+}
 }
 
 
